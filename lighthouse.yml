@@ -185,6 +185,7 @@ services:
       - ${NETWORK}
       - --debug-level=${LOG_LEVEL}
       - --keystore
+      - --unsafe-and-dangerous-mode
     depends_on:
       - consensus
 
@@ -224,7 +225,7 @@ services:
     restart: "no"
     volumes:
       - lhconsensus-data:/var/lib/lighthouse
-    entrypoint: ["/bin/sh","-c"]
+    entrypoint: ["/bin/sh", "-c"]
     command: /bin/sh
 
 volumes:

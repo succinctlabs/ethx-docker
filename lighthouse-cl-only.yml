@@ -4,7 +4,7 @@ x-logging: &logging
     options:
       max-size: 100m
       max-file: "3"
-      tag: '{{.ImageName}}|{{.Name}}|{{.ImageFullID}}|{{.FullID}}'
+      tag: "{{.ImageName}}|{{.Name}}|{{.ImageFullID}}|{{.FullID}}"
 
 x-build: &lh-build
   context: ./lighthouse
@@ -81,6 +81,7 @@ services:
       - "8008"
       - --suggested-fee-recipient
       - ${FEE_RECIPIENT}
+      - --unsafe-and-dangerous-mode
     labels:
       - metrics.scrape=true
       - metrics.path=/metrics
@@ -95,7 +96,7 @@ services:
     restart: "no"
     volumes:
       - lhconsensus-data:/var/lib/lighthouse
-    entrypoint: ["/bin/sh","-c"]
+    entrypoint: ["/bin/sh", "-c"]
     command: /bin/sh
 
 volumes:
