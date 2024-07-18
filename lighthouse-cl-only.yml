@@ -81,7 +81,14 @@ services:
       - "8008"
       - --suggested-fee-recipient
       - ${FEE_RECIPIENT}
+      - --http-allow-origin
+      - "*"
+      - --slots-per-restore-point
+      - "32"
+      - --historic-state-cache-size
+      - "4"
       - --unsafe-and-dangerous-mode
+      - --disable-backfill-rate-limiting
     labels:
       - metrics.scrape=true
       - metrics.path=/metrics

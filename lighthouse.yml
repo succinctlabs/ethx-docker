@@ -185,7 +185,14 @@ services:
       - ${NETWORK}
       - --debug-level=${LOG_LEVEL}
       - --keystore
+      - --http-allow-origin
+      - "*"
+      - --slots-per-restore-point
+      - "32"
+      - --historic-state-cache-size
+      - "4"
       - --unsafe-and-dangerous-mode
+      - --disable-backfill-rate-limiting
     depends_on:
       - consensus
 
