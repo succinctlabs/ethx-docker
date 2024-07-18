@@ -4,8 +4,7 @@ x-logging: &logging
     options:
       max-size: 100m
       max-file: "3"
-      tag: '{{.ImageName}}|{{.Name}}|{{.ImageFullID}}|{{.FullID}}'
-
+      tag: "{{.ImageName}}|{{.Name}}|{{.ImageFullID}}|{{.FullID}}"
 
 x-build: &lh-build
   context: ./lighthouse
@@ -38,7 +37,7 @@ services:
       - BEACON_STATS_API=${BEACON_STATS_API}
       - BEACON_STATS_MACHINE=${BEACON_STATS_MACHINE}
       - CL_EXTRAS=${CL_EXTRAS:-}
-      - ARCHIVE_NODE=${ARCHIVE_NODE:-false}
+      - ARCHIVE_NODE=${ARCHIVE_NODE:-true}
       - IPV6=${IPV6:-false}
       - CL_P2P_PORT=${CL_P2P_PORT:-9000}
       - CL_QUIC_PORT=${CL_QUIC_PORT:-9001}

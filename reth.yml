@@ -4,7 +4,7 @@ x-logging: &logging
     options:
       max-size: 100m
       max-file: "3"
-      tag: '{{.ImageName}}|{{.Name}}|{{.ImageFullID}}|{{.FullID}}'
+      tag: "{{.ImageName}}|{{.Name}}|{{.ImageFullID}}|{{.FullID}}"
 
 services:
   execution:
@@ -70,12 +70,16 @@ services:
       - 0.0.0.0
       - --http.port
       - ${EL_RPC_PORT:-8545}
+      - --http.api
+      - web3,eth,net,debug,trace,txpool,rpc
       - --http.corsdomain=*
       - --ws
       - --ws.addr
       - 0.0.0.0
       - --ws.port
       - ${EL_WS_PORT:-8546}
+      - --ws.api
+      - web3,eth,net,debug,trace,txpool,rpc
       - --ws.origins=*
       - --authrpc.addr
       - 0.0.0.0
@@ -97,7 +101,7 @@ services:
     restart: "no"
     volumes:
       - reth-el-data:/var/lib/reth
-    entrypoint: ["/bin/sh","-c"]
+    entrypoint: ["/bin/sh", "-c"]
     command: /bin/sh
 
 volumes:
