@@ -71,7 +71,7 @@ services:
       - --http.port
       - ${EL_RPC_PORT:-8545}
       - --http.api
-      - web3,eth,net,debug,trace,txpool,rpc
+      - All
       - --http.corsdomain=*
       - --ws
       - --ws.addr
@@ -79,7 +79,7 @@ services:
       - --ws.port
       - ${EL_WS_PORT:-8546}
       - --ws.api
-      - web3,eth,net,debug,trace,txpool,rpc
+      - All
       - --ws.origins=*
       - --authrpc.addr
       - 0.0.0.0
