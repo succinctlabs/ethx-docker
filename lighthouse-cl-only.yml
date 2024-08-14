@@ -87,7 +87,6 @@ services:
       - "32"
       - --historic-state-cache-size
       - "4"
-      - --unsafe-and-dangerous-mode
       - --disable-backfill-rate-limiting
     labels:
       - metrics.scrape=true
