@@ -88,7 +88,6 @@ services:
       - "32"
       - --historic-state-cache-size
       - "4"
-      - --disable-backfill-rate-limiting
     labels:
       - metrics.scrape=true
       - metrics.path=/metrics
