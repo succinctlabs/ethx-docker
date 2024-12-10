@@ -84,8 +84,6 @@ services:
       - "8008"
       - --suggested-fee-recipient
       - ${FEE_RECIPIENT}
-      - --http-allow-origin
-      - "*"
       - --slots-per-restore-point
       - "32"
       - --historic-state-cache-size
