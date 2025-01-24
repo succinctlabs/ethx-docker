@@ -90,7 +90,7 @@ services:
       - --max-outbound-peers
       - ${EL_MAX_PEER_COUNT:-100}
       - --rpc.eth-proof-window
-      - 1024
+      - ${ETH_PROOF_WINDOW:-1024}
     labels:
       - metrics.scrape=true
       - metrics.path=/metrics
